@@ -9,7 +9,7 @@
     border: 1px solid red;
     margin: 10px;
     border-radius: 5px;
-    background-image: url(./field2.png);
+    background-image: url('/_multipages/field2.png');
     background-size: 700px;
     background-position: center;
     position: relative;
