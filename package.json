@@ -2,7 +2,7 @@
   "name": "counter",
   "private": true,
   "version": "0.0.0",
-  "homepage": "http://ketsaraporn.github.io/_multipages",
+  "homepage": "https://king1909.github.io/_multipages/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
