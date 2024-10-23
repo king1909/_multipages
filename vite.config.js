@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
-  base:'_/multipages/',
+  base: '/_multipages/', // ชื่อ repository 
 
 })
