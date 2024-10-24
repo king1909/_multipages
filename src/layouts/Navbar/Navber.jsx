@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Navber.css";
 
-function Navber({products, carts, tab, setTab }) {
+function Navber({products, carts, tab, setTab, setToken }) {
   return (
     <div className="navber-container">
 
@@ -88,6 +88,15 @@ function Navber({products, carts, tab, setTab }) {
           )}
         </button>
       </Link>
+
+
+      <button className="btn btn-outline-danger" 
+      onClick={() => {
+        setToken('')
+      }}
+      >
+        Logout
+      </button>
 
     
 

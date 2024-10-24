@@ -7,7 +7,7 @@ import Components from "./Pages/Components/Components";
 import Todo from "./Pages/Todo/Todo";
 import Products from "./Pages/Products/Products";
 import Carts from "./Pages/Carts/Carts";
-/* import Login from "./Pages/Login/Login"; */
+import Login from "./Pages/Login/Login";
 
 import { fetchProducts } from "./data/products";
 
@@ -36,6 +36,8 @@ const intTab = 'home'
 
 function App() {
 
+  const [token, setToken] = useState('')
+
   const [products, setProducts] = useState([])
   const [carts, setCarts] = useState([])
 
@@ -50,11 +52,15 @@ function App() {
       setTab(intTab)
   }, []) //first load
 
-  return (
+//set token ว่างโชว์หน้าLogin
+  if (token === ''  ){
+    return (<Login setToken={setToken}/>)
+  }else{
+    return (
     <div className="app-container">
       <HashRouter>
         <Routes>
-          <Route element={<Layout products={products} carts={carts} tab = {tab} setTab = {setTab} />}>
+          <Route element={<Layout products={products} carts={carts} tab = {tab} setTab = {setTab} setToken = {setToken} />}>
             <Route path={'/'} element={<Home />} />
             {/* Route ไปยังหน้าต่างๆและแสดง */}
             <Route path = {'/home'} element={<Home />} />
@@ -76,6 +82,9 @@ function App() {
 
     </div>
   );
+
+  }
+  
 }
 
 export default App;
