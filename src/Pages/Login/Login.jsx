@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef,useEffect } from 'react';
 import { verifyUser } from '../../data/users';  // ตรวจสอบว่า verifyUser ทำงานถูกต้อง
 import './Login.css';
 
@@ -28,11 +28,26 @@ function Login({ setToken }) {
         }
     };
 
+
+// ฟังก์ชันเช็คคีย์บอร์ด  
+const checkKeyboard = (e) => {
+    if (e.key === 'Enter'){
+        handleLogin();
+    }
+}
+
+useEffect(() => {
+    window.addEventListener('keydown', checkKeyboard);
+    return () => {
+      window.removeEventListener('keydown', checkKeyboard);
+    };
+  }, []);
+
     return (
         <div className="login-container">
             <Form>
                 <Form.Group controlId="username">
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label class="bi bi-person-vcard-fill" >&nbsp;Username</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Enter Username"
@@ -42,7 +57,7 @@ function Login({ setToken }) {
                 </Form.Group>
 
                 <Form.Group controlId="password" className="mt-2">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label class="bi bi-key-fill" >&nbsp;Password</Form.Label>
                     <Form.Control
                         type="password"
                         placeholder="Enter Password"
@@ -52,11 +67,23 @@ function Login({ setToken }) {
                 </Form.Group>
 
                 <Button
+                    
                     className="btn btn-success mt-3"
                     type="button"  // เปลี่ยนจาก submit เป็น button เพราะเราไม่ใช้ form submit
                     onClick={handleLogin}
                 >
-                    Login
+                    <span class="bi bi-door-open">&nbsp;Login</span>
+                    
+                </Button>
+                &nbsp;
+                <Button
+                    
+                    className="btn btn-danger mt-3"
+                    type="button"  // เปลี่ยนจาก submit เป็น button เพราะเราไม่ใช้ form submit
+                    onClick={handleLogin}
+                >
+                    <span class="bi bi-x-square-fill">&nbsp;clear</span>
+                    
                 </Button>
             </Form>
         </div>

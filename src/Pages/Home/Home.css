@@ -1,21 +1,91 @@
-.home-container{
-    border: 1px solid;
-    border-radius: 0.5rem;
-    height: 640px;
+/* Main container */
+.home-container {
+    border: none;
+    border-radius: 1rem;
+    max-width: 800px;
     text-align: center;
-    padding: 0.5rem;
+    padding: 2rem;
     background-image: url('/_multipages/background.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.img-container{
+    background-color: #30ae9e; /* Light blue background */
+    margin: 2rem auto; /* Center on page */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    position: relative;
+    overflow: hidden; /* To prevent overflow */
+  }
+  
+  /* Content container */
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elements */
+    justify-content: center;
+  }
+  
+  /* Image container */
+  .img-container {
     width: 200px;
     height: 200px;
-    border: 1px solid;
-    border-radius:9rem;
-    margin-left: 3rem;
-    background-image: url('../public/Human.png');
+    border: 5px solid #007acc; /* Blue border */
+    border-radius: 50%; /* Perfect circle */
+    margin-bottom: 1.5rem;
+    background-image: url('/_multipages/Human.png');
     background-size: cover;
     background-position: center;
-}
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .img-container:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+  }
+  
+  /* Footer styling */
+  .footer-text {
+    padding: 1.5rem 2rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    font-size: 1rem;
+    line-height: 1.8; /* More line height for readability */
+    color: #333;
+    max-width: 600px;
+    text-align: left; /* Left-align text */
+    margin-top: 1.5rem;
+  }
+
+  /* Hover effect for footer */
+.footer-text:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+  }
+  
+  /* Heading styling */
+  h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #007acc; /* Blue color for heading */
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  
+  /* Responsive styling */
+  @media screen and (max-width: 600px) {
+    .home-container {
+      padding: 1rem;
+    }
+  
+    .footer-text {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .img-container {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
